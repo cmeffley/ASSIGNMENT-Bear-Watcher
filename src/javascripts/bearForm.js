@@ -1,4 +1,4 @@
-import bears from './river';
+// import bears from './river';
 
 const printToDom = (divId, textToPrint) => {
   const selectedDiv = document.querySelector(divId);
@@ -12,19 +12,20 @@ const bearForm = () => {
   <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
   <hr class="my-4">
   <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <form class="text-center">
+  <form id="form" class="text-center">
     <div class="mb-3">
     <label for="addNewBear" class="form-label">Add New Bear</label>
-    <input type="text" class="form-control" id="addBear" required>
+    <input type="text" class="form-control" id="addBear" placeholder="Name of Bear" required>
     <label for="basic-url" class="form-label">Add Picture</label>
-    <input type="text" class="form-control" id="bearPicture" required>
+    <input type="text" class="form-control" id="bearPicture" placeholder="Url" required>
     </div>
     <button type="submit" class="btn btn-primary" id="sort1">Submit</button>
     </form>
 </div>`;
-  printToDom('body', screen);
+  printToDom('#app', screen);
 };
 
+const newBears = [];
 const formInfo = (e) => {
   e.preventDefault();
 
@@ -35,23 +36,24 @@ const formInfo = (e) => {
     name,
     picture,
   };
-  bears.push(bearObj);
+  newBears.push(bearObj);
   // eslint-disable-next-line no-use-before-define
-  createBearCard(bears);
-  document.querySelector('screen').reset();
+  createBearCard(newBears);
+  // createBearCard2(bears.map((bear) => bear.id)
+  // document.querySelector('#form').reset();
 };
 
 const createBearCard = (taco) => {
   let card = '';
   taco.forEach((element) => {
-    card += `<div class="card mb-3" style="width: 18rem;">
+    card += `<div class="card mb-3" style="width: 18rem;" id="card1">
     <div class="card-body text-center">
     <h2 class="card-text">${element.name}</h2>
     <img class="card-img-top" src="${element.picture}" alt="Picture of a bear">
   </div>
   </div>`;
   });
-  printToDom('#app', card);
+  printToDom('#app2', card);
 };
 
 const buttonActions = () => {
