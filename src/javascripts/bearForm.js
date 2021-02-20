@@ -25,10 +25,10 @@ const bearForm = () => {
   printToDom('#app', screen);
 };
 
+const newBears = [];
 const formInfo = (e) => {
   e.preventDefault();
 
-  const newBears = [];
   const name = document.querySelector('#addBear').value;
   const picture = document.querySelector('#bearPicture').value;
 
@@ -39,6 +39,7 @@ const formInfo = (e) => {
   newBears.push(bearObj);
   // eslint-disable-next-line no-use-before-define
   createBearCard(newBears);
+  // createBearCard2(bears.map((bear) => bear.id)
   // document.querySelector('#form').reset();
 };
 
@@ -57,7 +58,6 @@ const createBearCard = (taco) => {
 
 const buttonActions = () => {
   document.querySelector('#sort1').addEventListener('click', formInfo);
-  document.querySelector('#all-bears').addEventListener('click');
 };
 
 export { bearForm, buttonActions };
