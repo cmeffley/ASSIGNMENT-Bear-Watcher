@@ -2,8 +2,15 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 body {
-  background-color: antiquewhite;
+  background-color: rgb(126, 163, 143);
   color: brown;
   text-align: center;
-  margin-top: 100px;
+}
+
+.jumbotron {
+  background-color: rgb(126, 163, 143);
+}
+
+ #card1 {
+   object-fit: scale-down;
 }
