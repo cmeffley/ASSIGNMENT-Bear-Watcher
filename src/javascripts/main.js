@@ -1,12 +1,14 @@
-import { bearForm, buttonActions } from './bearForm';
-import buttonActions2 from './river';
+import bearForm from './bearForm';
+import createBearCard from './river';
+import bears from './data/bears';
+import buttonActions from './data/formInfo';
 
 import '../styles/main.scss';
 
 const init = () => {
   bearForm();
+  createBearCard(bears);
   buttonActions();
-  buttonActions2();
 };
 
 init();
